@@ -1,21 +1,21 @@
-// 2. Write a recursive function to display  numbers  from 5 to 15
-
 package ClassFiles;
 
-public class Q2{
+// sum of Array
 
-    public static void display(int n)
+public class Q2 {
+
+    static void sumOfArray(int arr[])
     {
-        if(n>16)
+        int sum=0;
+        for(int i:arr)
         {
-            return;
+            sum+=i;
         }
-        System.out.print(n+" ");
-        display(n+1);
+        System.out.print("Sum Of Array:"+sum);
     }
 
-    public static void main(String []args)
-    {
-        display(5);
+    public static void main(String[] args) {
+        int arr[]={56,34,234,78,45};
+        sumOfArray(arr);
     }
 }

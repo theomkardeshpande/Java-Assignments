@@ -1,25 +1,59 @@
-// 1. Write a recursive function to calculate factorial of given number.
+// write java program to sort numeric array and string array
 package ClassFiles;
 
-import java.util.Scanner;
+public class Q1 {
 
-public class Q1{
-
-    public static int factorial(int number)
+    static void sort_numberic(int arr[])
     {
-        if(number==1 || number==0)
+        for(int i=0;i<arr.length;i++)
         {
-            return 1;
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=temp;
+                }
+            }
         }
-        return (number*factorial(number-1));
+
+        System.out.println("Priting Sorted Array::");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]+" ");
+        }
+    }
+
+    static void sort_array(String []arr)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i].compareTo(arr[j])>0)
+                {
+                    String swap=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=swap;
+                }
+            }
+        }
+
+        System.out.println("Priting Sorted String Array:");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]+" ");
+        }
     }
 
     public static void main(String []args)
     {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter Number for Factorial:");
-        int number=sc.nextInt();
-        System.out.println("Factorial of "+number+" is "+factorial(number));
-        sc.close();
+        int numeric[]={87,34,123,56,23};
+        String arr[]={"Python","Java","DSA","Statistic","Software Engineering"};
+        sort_array(arr);
+        System.out.println();
+        sort_numberic(numeric);
+
     }
 }

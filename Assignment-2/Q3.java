@@ -1,21 +1,29 @@
-// 3. Write a recursive function to display  numbers  from 15 to 5
-
 package ClassFiles;
 
-public class Q3{
+import java.util.Scanner;
 
-    public static void display(int n)
+// if array contains any specific values
+public class Q3 {
+
+    static boolean searchSpecificValue(int arr[],int value)
     {
-        if(n<5)
+        boolean flag=false;
+        for(int i:arr)
         {
-            return;
+            if(i==value)
+            {
+                flag=true;
+            }
+            
         }
-        System.out.print(n+" ");
-        display(n-1);
+        return flag;
     }
 
-    public static void main(String[]args)
-    {
-        display(15);
+    public static void main(String[] args) {
+        int arr[]={56,34,234,78,45};
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Specific Value:");
+        int value=sc.nextInt();
+        System.out.println("Specific Values Present:"+searchSpecificValue(arr, value));
     }
 }

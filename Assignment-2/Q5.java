@@ -1,36 +1,46 @@
-// 5. Write a recursive function to sort list of 10 numbers in ascending order.
-
 package ClassFiles;
 
-public class Q5{
+import java.util.Date;
 
-    public static void sortingList(int arr[],int n)
+// Implement constructor, parameterized constructor and constructor overloading
+
+class Employee {
+    int empId;
+    String empName;
+    String empDepartment;
+
+    public Employee()
     {
-        if(n==1)
-        {
-            return;
-        }
-
-        for(int i=0;i<n-1;i++)
-        {
-            if(arr[i]>arr[i+1])
-            {
-                int temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
-            }
-        }
-        sortingList(arr,n-1);
+        this.empId=0;
+        this.empName="";
+        this.empDepartment="";
     }
 
-    public static void main(String []args)
+    public Employee(int id, String name, String department) {
+        this.empId=id;
+        this.empName=name;
+        this.empDepartment=department;
+    }
+
+    public Employee(String name, String department)
     {
-        int arr[]={45,12,86,88,13,17,90,24,77,44};
-        System.out.println("Sorted Array:");
-        sortingList(arr,arr.length);
-        for(int i=0;i<arr.length-1;i++)
-        {
-            System.out.print(arr[i]+" ");
-        }
+        this.empName=name;
+        this.empDepartment=department;
+        this.empId=0;
+    }
+
+    public void displayEmployeeDetails()
+    {
+        System.out.println("Employee ID:"+this.empId);
+        System.out.println("Employee NAME:"+this.empName);
+        System.out.println("Employee DEPARTMENT:"+empDepartment);
+    }
+}
+
+public class Q5 {
+
+    public static void main(String[] args) {
+        Employee e1=new Employee(101, "John Doe", "Devlopment");
+        e1.displayEmployeeDetails();
     }
 }
