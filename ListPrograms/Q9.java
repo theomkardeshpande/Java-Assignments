@@ -1,4 +1,4 @@
-package ClassFiles;
+package Classfiles;
 import java.util.Scanner;
 
 // 9. Write a program to accept product details like ProductName, ProductID, 
